@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hellom210-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hellom210
+  template:
+    metadata:
+      labels:
+        app: hellom210
+    spec:
+      containers:
+        - name: hellom210
+          image: ghcr.io/hackerbukica666/ajdin-hellom210:latest
+          ports:
+            - containerPort: 80

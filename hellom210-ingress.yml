@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hellom210-ingress
+spec:
+  rules:
+    - host: <minikube-ip>.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hellom210-service
+                port:
+                  number: 80
